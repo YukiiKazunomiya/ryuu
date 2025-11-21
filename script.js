@@ -1,21 +1,21 @@
 // --- CONFIG & DATA ---
 const dbStruktur = {
-    'kapus': { nama: 'dr. Faisal, M.Kes', tugas: 'Memimpin, mengawasi, dan mengendalikan kegiatan Puskesmas.' },
-    'tu': { nama: 'Budi Santoso, SKM', tugas: 'Mengelola kepegawaian, keuangan, dan surat menyurat.' },
-    'keuangan': { nama: 'Dewi Sartika, SE', tugas: 'Mengelola anggaran operasional dan BOK.' },
-    'umum': { nama: 'Joko Susilo', tugas: 'Mengelola inventaris barang dan kebersihan.' },
-    'ukm': { nama: 'Rina Marlina, Amd.Keb', tugas: 'Koordinator Promkes, Kesling, dan Gizi.' },
-    'ukp': { nama: 'dr. Herman', tugas: 'Koordinator pelayanan medis perorangan.' },
-    'poli': { nama: 'Tim Dokter Umum', tugas: 'Melayani pasien umum.' },
-    'ugd': { nama: 'Tim Jaga', tugas: 'Penanganan kegawatdaruratan 24 jam.' }
+    'kapus': { nama: '', tugas: 'Memimpin, mengawasi, dan mengendalikan kegiatan Puskesmas.' },
+    'tu': { nama: '', tugas: 'Mengelola kepegawaian, keuangan, dan surat menyurat.' },
+    'keuangan': { nama: '', tugas: 'Mengelola anggaran operasional dan BOK.' },
+    'umum': { nama: '', tugas: 'Mengelola inventaris barang dan kebersihan.' },
+    'ukm': { nama: '', tugas: 'Koordinator Promkes, Kesling, dan Gizi.' },
+    'ukp': { nama: '', tugas: 'Koordinator pelayanan medis perorangan.' },
+    'poli': { nama: '', tugas: 'Melayani pasien umum.' },
+    'ugd': { nama: '', tugas: 'Penanganan kegawatdaruratan 24 jam.' }
 };
 
 const dbPegawai = [
-    { nama: "dr. Faisal", jabatan: "Ka. Puskesmas", status: "PNS" },
-    { nama: "Siti Aminah", jabatan: "Bidan Koord", status: "PNS" },
-    { nama: "Rahmat H.", jabatan: "Perawat", status: "PPPK" },
-    { nama: "Cut Meutia", jabatan: "Apoteker", status: "Kontrak" },
-    { nama: "Teuku Umar", jabatan: "Security", status: "Honorer" }
+    { nama: "dr. ", jabatan: "Ka. Puskesmas", status: "PNS" },
+    { nama: "", jabatan: "Bidan Koord", status: "PNS" },
+    { nama: "", jabatan: "Perawat", status: "PPPK" },
+    { nama: "", jabatan: "Apoteker", status: "Kontrak" },
+    { nama: "", jabatan: "Security", status: "Honorer" }
 ];
 
 // --- NAVIGASI HALAMAN ---
