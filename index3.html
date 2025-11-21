@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPTD Puskesmas Meurebo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="logo_aceh_barat.png" alt="Logo" style="height: 45px; margin-right: 10px;">
+
+                <div class="logo-text">
+                    <span>UPTD PUSKESMAS</span>
+                    <strong>MEUREUBO</strong>
+                </div>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item active" onclick="navigate('home')">Beranda</li>
+                <li class="nav-item" onclick="navigate('pemeriksaan')">Pendaftaran</li>
+                <li class="nav-item" onclick="navigate('struktur')">Profil</li>
+                <li class="nav-item" onclick="navigate('pengaduan')">Pengaduan</li>
+                <li class="nav-item btn-login-nav" onclick="navigate('pegawai')">Pegawai</li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="hero-overlay"></div>
+                <div class="container hero-content">
+                    <span class="badge-welcome">Selamat Datang</span>
+                    <h1>Melayani dengan Hati,<br>Menuju Meurebo Sehat.</h1>
+                    <p>Layanan kesehatan profesional, cepat, dan ramah untuk seluruh lapisan masyarakat Aceh Barat.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="navigate('pemeriksaan')">Daftar Berobat Sekarang</button>
+                        <button class="btn btn-outline" onclick="navigate('struktur')">Tentang Kami</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container info-bar-container">
+                <div class="info-bar">
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h5>Jam Operasional</h5>
+                            <small>Senin - Sabtu: 08.00 - 14.00</small>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <div>
+                            <h5>Lokasi Kami</h5>
+                            <small>Jl. Meurebo Utama, Aceh Barat</small>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-ambulance"></i>
+                        <div>
+                            <h5>IGD 24 Jam</h5>
+                            <small>Siaga Gawat Darurat</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container section-padding">
+                <div class="section-title">
+                    <h2>Visi & Misi</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="visi-misi-grid">
+                    <div class="card-content">
+                        <div class="icon-bg"><i class="fas fa-bullseye"></i></div>
+                        <h3>Visi</h3>
+                        <p>"Terwujudnya Masyarakat Kecamatan Meurebo yang Sehat, Mandiri, dan Berkeadilan."</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="icon-bg"><i class="fas fa-rocket"></i></div>
+                        <h3>Misi</h3>
+                        <ul>
+                            <li>Memberikan pelayanan kesehatan bermutu.</li>
+                            <li>Meningkatkan manajemen puskesmas yang akuntabel.</li>
+                            <li>Mendorong pemberdayaan masyarakat.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pemeriksaan" class="page">
+            <div class="container section-padding">
+                <div class="form-container animate-up">
+                    <div class="form-header">
+                        <h2>Formulir Pasien</h2>
+                        <p>Silakan isi data diri Anda untuk mengambil nomor antrian.</p>
+                    </div>
+                    <form onsubmit="handleForm(event, 'Pendaftaran Berhasil! Silakan menuju loket.')">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>NIK (KTP/KK)</label>
+                                <input type="number" required placeholder="16 Digit NIK">
+                            </div>
+                            <div class="form-group">
+                                <label>Nama Lengkap</label>
+                                <input type="text" required placeholder="Nama Pasien">
+                            </div>
+                            <div class="form-group">
+                                <label>Tanggal Lahir</label>
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Poli Tujuan</label>
+                                <select required>
+                                    <option value="">Pilih Layanan...</option>
+                                    <option>Poli Umum</option>
+                                    <option>Poli Gigi</option>
+                                    <option>Poli KIA/KB</option>
+                                    <option>Poli Lansia</option>
+                                    <option>Laboratorium</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Keluhan Utama</label>
+                            <textarea rows="3" required placeholder="Jelaskan gejala yang dirasakan..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Kirim Data Pendaftaran</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="struktur" class="page">
+            <div class="container section-padding">
+                <div class="section-title">
+                    <h2>Struktur Organisasi</h2>
+                    <p>Klik pada jabatan untuk melihat detail pejabat.</p>
+                </div>
+                
+                <div class="org-tree-wrapper animate-up">
+                    <div class="tf-tree tf-gap-sm">
+                        <ul>
+                            <li>
+                                <span class="tf-nc root-node" onclick="openModal('kapus')">
+                                    <div class="node-content">
+                                        <i class="fas fa-user-md"></i>
+                                        <strong>Kepala Puskesmas</strong>
+                                    </div>
+                                </span>
+                                <ul>
+                                    <li>
+                                        <span class="tf-nc" onclick="openModal('tu')">Kasubbag TU</span>
+                                        <ul>
+                                            <li><span class="tf-nc" onclick="openModal('keuangan')">Keuangan</span></li>
+                                            <li><span class="tf-nc" onclick="openModal('umum')">Umum</span></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span class="tf-nc" onclick="openModal('ukm')">Koord. UKM</span>
+                                    </li>
+                                    <li>
+                                        <span class="tf-nc" onclick="openModal('ukp')">Koord. UKP</span>
+                                        <ul>
+                                            <li><span class="tf-nc" onclick="openModal('poli')">Poli Umum</span></li>
+                                            <li><span class="tf-nc" onclick="openModal('ugd')">UGD</span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pengaduan" class="page">
+            <div class="container section-padding">
+                <div class="form-container animate-up">
+                    <div class="form-header header-orange">
+                        <h2><i class="fas fa-envelope-open-text"></i> Suara Anda</h2>
+                        <p>Kritik dan saran Anda membangun kami.</p>
+                    </div>
+                    <form onsubmit="handleForm(event, 'Laporan Anda telah kami terima. Terima kasih.')">
+                        <div class="form-group">
+                            <label>Jenis Laporan</label>
+                            <div class="radio-group">
+                                <label class="radio-box"><input type="radio" name="tipe" checked> Saran</label>
+                                <label class="radio-box"><input type="radio" name="tipe"> Kritik</label>
+                                <label class="radio-box"><input type="radio" name="tipe"> Pengaduan</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Nama (Boleh disamarkan)</label>
+                            <input type="text" placeholder="Hamba Allah">
+                        </div>
+                        <div class="form-group">
+                            <label>Isi Pesan</label>
+                            <textarea rows="5" required placeholder="Tuliskan detail laporan..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning btn-block">Kirim Laporan</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="pegawai" class="page">
+            <div class="container section-padding">
+                
+                <div id="login-view" class="login-wrapper animate-up">
+                    <div class="login-card">
+                        <div class="login-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Portal Pegawai</h3>
+                        <p>Silakan login untuk akses data.</p>
+                        <form onsubmit="handleLogin(event)">
+                            <div class="input-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="username" placeholder="Username (admin)" required>
+                            </div>
+                            <div class="input-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" placeholder="Password (123)" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Masuk Sistem</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="dashboard-view" style="display: none;">
+                    <div class="dashboard-header">
+                        <div>
+                            <h2>Data Kepegawaian</h2>
+                            <p id="welcome-msg">Selamat datang, Admin.</p>
+                        </div>
+                        <button onclick="doLogout()" class="btn btn-sm btn-danger"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </div>
+                    
+                    <div class="table-responsive card-content">
+                        <table class="modern-table" id="tabel-pegawai">
+                            <thead>
+                                <tr>
+                                    <th>Nama Pegawai</th>
+                                    <th>Jabatan</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2024 UPTD Puskesmas Meurebo. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <div id="infoModal" class="modal-backdrop">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="m-jabatan">Jabatan</h3>
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-profile">
+                    <div class="avatar-circle"><i class="fas fa-user"></i></div>
+                    <div>
+                        <h4 id="m-nama">Nama Pejabat</h4>
+                        <span class="status-badge">Aktif</span>
+                    </div>
+                </div>
+                <hr>
+                <p><strong>Tugas Pokok:</strong></p>
+                <p id="m-tugas" class="text-desc">Deskripsi tugas...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hotline-wrapper">
+        <div class="hotline-options" id="hotlineOptions">
+            <a href="https://wa.me/6282165663150" target="_blank" class="hl-item wa">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://instagram.com/puskesmas_meurebo" target="_blank" class="hl-item ig">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+        </div>
+        <button class="btn-float-main" onclick="toggleHotline()">
+            <i class="fas fa-headset"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
